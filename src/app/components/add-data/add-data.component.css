@@ -1,12 +1,17 @@
 .form-container {
   display: flex;
   justify-content: center;
-  width: 300px;
-  border: 5px solid black;
+}
+
+.content-holder {
+  background: white;
+  max-width: 450px;
+  width: 90%;
 }
 
 .controls {
   position: fixed;
+  background: white;
   display: flex;
   justify-content: center;
   bottom: 0px;
@@ -19,9 +24,9 @@
 .control-button {
   cursor: pointer;
   color: black;
-  background: white;
   border: none;
   min-width: 70px;
+  background: white;
   font-weight: 800;
   margin: 10px;
   font-size: 13px;

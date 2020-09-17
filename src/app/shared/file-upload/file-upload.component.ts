@@ -18,6 +18,12 @@ export class FileUploadComponent implements OnInit {
   group: FormGroup;
   touched = false;
 
+  get isRequired() {
+    return (
+      this.field.validations[0] && this.field.validations[0].name === 'required'
+    );
+  }
+
   get f() {
     return this.group.controls;
   }
@@ -43,6 +49,7 @@ export class FileUploadComponent implements OnInit {
   }
 
   deleteImage(index) {
+    this.touched = true;
     this.t.removeAt(index);
   }
 

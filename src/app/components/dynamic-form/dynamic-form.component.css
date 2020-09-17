@@ -6,3 +6,17 @@
   color: #cc3c3c;
   font-size: 0.75em;
 }
+
+.dynamic-form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+h2 {
+  text-align: left;
+  font-weight: 600;
+  font-size: 25px;
+  padding: 10px;
+  border-bottom: 1px solid #04c466;
+}

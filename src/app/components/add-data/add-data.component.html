@@ -1,5 +1,10 @@
 <div class="form-container">
-  <app-dynamic-form [fields]="fields"></app-dynamic-form>
+  <div class="content-holder">
+    <app-dynamic-form
+      [fields]="fields"
+      [title]="activeStepHeader"
+    ></app-dynamic-form>
+  </div>
 </div>
 <div class="controls">
   <button class="control-button">SKIP</button>

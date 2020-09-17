@@ -1,20 +1,35 @@
-<label [for]="field.name">
-  <img
-    height="30px"
-    src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"
+<div class="main-container">
+  <label
+    class="lable-container"
+    [ngClass]="{
+      'invalid-field':
+        formField.hasError(field.validations[0] && field.validations[0].name) &&
+        touched
+    }"
+    [for]="field.name"
+  >
+    <div>
+      <span class="label-header">{{ field.label }}</span>
+      <span class="optional-text" *ngIf="!isRequired">(optional)</span>
+    </div>
+    <img
+      height="10px"
+      src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"
+    />
+  </label>
+  <input
+    #fileInput
+    [id]="field.name"
+    type="file"
+    (change)="onFileChange($event)"
+    multiple
   />
-</label>
-<input
-  #fileInput
-  [id]="field.name"
-  type="file"
-  (change)="onFileChange($event)"
-  multiple
-/>
-<span *ngIf="formField.hasError(field.validations[0].name) && touched"
-  >Error</span
->
-<div *ngFor="let image of t.controls; let i = index">
-  <span>{{ image.get("name").value }}</span>
-  <button (click)="deleteImage(index)"></button>
+  <div class="image-list" *ngFor="let image of t.controls; let i = index">
+    <span class="list-item-text">{{ image.get("name").value }}</span>
+    <img
+      height="15px"
+      src="assets/ic_delete.png"
+      (click)="deleteImage(index)"
+    />
+  </div>
 </div>

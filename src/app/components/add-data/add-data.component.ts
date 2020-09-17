@@ -20,6 +20,10 @@ export class AddDataComponent implements OnInit {
     return STEP_ITEMS[this.currentStep].label;
   }
 
+  get activeStepHeader() {
+    return STEP_ITEMS[this.currentStep].header;
+  }
+
   ngOnInit(): void {
     this.masterForm = this.fb.group({});
     this.createForm();

@@ -15,6 +15,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class DynamicFormComponent implements OnInit, OnChanges {
   @Input() fields: any[] = [];
+  @Input() title: string;
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {}

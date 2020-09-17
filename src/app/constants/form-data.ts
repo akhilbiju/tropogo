@@ -18,9 +18,27 @@ const DATA_STEP_1 = [
   },
   {
     type: 'files',
-    label: 'certificate',
+    label: 'institute brochure',
+    inputType: 'file',
+    name: 'brochure',
+    isArray: true,
+    validations: [],
+    value: [],
+  },
+  {
+    type: 'files',
+    label: 'certifications',
     inputType: 'file',
     name: 'Certificates',
+    isArray: true,
+    validations: [],
+    value: [],
+  },
+  {
+    type: 'files',
+    label: 'institute/course gallery',
+    inputType: 'file',
+    name: 'gallery',
     isArray: true,
     validations: [
       {
@@ -61,8 +79,12 @@ const DATA_STEP_2 = [
 ];
 
 const STEP_ITEMS = [
-  { label: 'Institute', data: DATA_STEP_1 },
-  { label: 'Course', data: DATA_STEP_2 },
+  {
+    label: 'Institute',
+    header: 'Add some details of your training institute',
+    data: DATA_STEP_1,
+  },
+  { label: 'Course', header: 'Add course details', data: DATA_STEP_2 },
 ];
 
 export { STEP_ITEMS };
