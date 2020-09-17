@@ -1,11 +1,8 @@
-<mat-form-field [formGroup]="group">
-  <input matInput [formControlName]="field.name" [placeholder]="field.label" />
-  <ng-container
-    *ngFor="let validation of field.validations"
-    ngProjectAs="mat-error"
-  >
-    <mat-error *ngIf="formField.hasError(validation.name)">{{
-      validation.message
-    }}</mat-error>
-  </ng-container>
-</mat-form-field>
+<div *ngFor="let batch of t.controls; let i = index">
+  <mat-form-field [formGroup]="batch">
+    <input matInput formControlName="name" />
+  </mat-form-field>
+  <button (click)="deleteBatch(i)">remove</button>
+  <button (click)="resetBatch(batch)">reset</button>
+</div>
+<button (click)="addBatch()">Add</button>

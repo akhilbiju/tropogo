@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -34,7 +34,14 @@ export class DynamicFormComponent implements OnInit, OnChanges {
         field.value,
         this.bindValidations(field.validations || [])
       );
-      group.addControl(field.name, control);
+      group.addControl(
+        field.name,
+        field.isArray
+          ? field.value instanceof FormArray
+            ? field.value
+            : this.fb.array(field.value)
+          : control
+      );
     });
     return group;
   }

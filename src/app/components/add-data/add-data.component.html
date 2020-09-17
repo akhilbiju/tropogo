@@ -1,0 +1,23 @@
+<div class="form-container">
+  <app-dynamic-form [fields]="fields"></app-dynamic-form>
+</div>
+<div class="controls">
+  <button class="control-button">SKIP</button>
+  <button
+    class="control-button"
+    *ngIf="currentStep === 1"
+    (click)="goToPrevStep()"
+  >
+    BACK
+  </button>
+  <button
+    class="control-button"
+    *ngIf="currentStep === 0"
+    (click)="goToNextStep()"
+  >
+    NEXT
+  </button>
+  <button class="control-button" *ngIf="currentStep === 1" (click)="submit()">
+    SAVE & PUBLISH
+  </button>
+</div>

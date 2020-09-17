@@ -7,11 +7,13 @@ import {
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { BatchComponent } from '../shared/batch/batch.component';
+import { FileUploadComponent } from '../shared/file-upload/file-upload.component';
 import { InputComponent } from '../shared/input/input.component';
 
 const componentMapper = {
   input: InputComponent,
   batch: BatchComponent,
+  files: FileUploadComponent,
 };
 
 @Directive({

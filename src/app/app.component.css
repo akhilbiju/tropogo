@@ -1,0 +1,6 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 5px solid #04c466;
+}

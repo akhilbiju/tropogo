@@ -10,15 +10,20 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import { DynamicFieldDirective } from './directives/dynamic-field.directive';
 import { InputComponent } from './shared/input/input.component';
 import { BatchComponent } from './shared/batch/batch.component';
+import { FileUploadComponent } from './shared/file-upload/file-upload.component';
+import { AddDataComponent } from './components/add-data/add-data.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, DynamicFormComponent, DynamicFieldDirective, InputComponent, BatchComponent],
+  declarations: [AppComponent, DynamicFormComponent, DynamicFieldDirective, InputComponent, BatchComponent, FileUploadComponent, AddDataComponent, DashboardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatInputModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

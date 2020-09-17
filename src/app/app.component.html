@@ -1,5 +1,4 @@
-<app-dynamic-form [fields]="fields"></app-dynamic-form>
-<button>skip</button>
-<button *ngIf="currentStep === 1" (click)="goToPrevStep()">back</button>
-<button *ngIf="currentStep === 0" (click)="goToNextStep()">next</button>
-<button *ngIf="currentStep === 1" (click)="submit()">submit</button>
+<div class="logo-container">
+  <img src="assets/logoHeader.png" />
+</div>
+<router-outlet></router-outlet>
