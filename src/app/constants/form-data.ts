@@ -2,16 +2,26 @@ import { Validators } from '@angular/forms';
 
 const DATA_STEP_1 = [
   {
-    type: 'input',
-    label: 'Firstname',
-    inputType: 'text',
-    name: 'Firstname',
+    type: 'logo',
+    label: 'Institute logo',
+    inputType: 'file',
+    name: 'logo',
     isArray: false,
+    validations: [],
+    value: null,
+  },
+  {
+    type: 'input',
+    label: 'Name of institute',
+    inputType: 'text',
+    name: 'InstituteName',
+    isArray: false,
+    placeholder: 'Indian Institute of Drones',
     validations: [
       {
         name: 'required',
         validator: Validators.required,
-        message: 'Firstname needed',
+        message: 'Add Institute name',
       },
     ],
     value: null,

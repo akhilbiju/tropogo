@@ -14,9 +14,10 @@ import { FileUploadComponent } from './shared/file-upload/file-upload.component'
 import { AddDataComponent } from './components/add-data/add-data.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LogoComponent } from './shared/logo/logo.component';
 
 @NgModule({
-  declarations: [AppComponent, DynamicFormComponent, DynamicFieldDirective, InputComponent, BatchComponent, FileUploadComponent, AddDataComponent, DashboardComponent],
+  declarations: [AppComponent, DynamicFormComponent, DynamicFieldDirective, InputComponent, BatchComponent, FileUploadComponent, AddDataComponent, DashboardComponent, LogoComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

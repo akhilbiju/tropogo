@@ -1,0 +1,23 @@
+<div class="logo-container">
+  <span class="label-header">{{ field.label }}</span>
+  <div class="avatar-container">
+    <div class="avatar-edit">
+      <input
+        #fileInput
+        type="file"
+        (change)="onFileChange($event)"
+        id="imageUpload"
+        accept=".png, .jpg, .jpeg"
+      />
+      <label class="edit-label" for="imageUpload"
+        ><img class="edit-image" src="assets/pencil-edit-button.png"
+      /></label>
+    </div>
+    <div class="avatar-preview">
+      <div
+        class="imagePreview"
+        [ngStyle]="{ 'background-image': getUrl() }"
+      ></div>
+    </div>
+  </div>
+</div>
