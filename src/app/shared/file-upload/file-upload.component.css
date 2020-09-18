@@ -2,10 +2,24 @@ input {
   display: none;
 }
 
-.lable-container {
+.header-container {
+  border-bottom: 1px solid #e8e8e8;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #e8e8e8;
+}
+
+.upload-text {
+  padding-left: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: cadetblue;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .label-header {

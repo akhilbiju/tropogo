@@ -10,19 +10,23 @@
   <button class="control-button">SKIP</button>
   <button
     class="control-button"
-    *ngIf="currentStep === 1"
+    *ngIf="currentStep !== 0"
     (click)="goToPrevStep()"
   >
     BACK
   </button>
   <button
     class="control-button"
-    *ngIf="currentStep === 0"
+    *ngIf="currentStep < stepLength - 1"
     (click)="goToNextStep()"
   >
     NEXT
   </button>
-  <button class="control-button" *ngIf="currentStep === 1" (click)="submit()">
+  <button
+    class="control-button"
+    *ngIf="currentStep === stepLength - 1"
+    (click)="submit()"
+  >
     SAVE & PUBLISH
   </button>
 </div>

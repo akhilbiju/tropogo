@@ -16,7 +16,6 @@ export class FileUploadComponent implements OnInit {
   @ViewChild('fileInput') inputField: ElementRef;
   field: any;
   group: FormGroup;
-  touched = false;
 
   get isRequired() {
     return (
@@ -49,16 +48,16 @@ export class FileUploadComponent implements OnInit {
   }
 
   deleteImage(index) {
-    this.touched = true;
+    this.t.markAllAsTouched();
     this.t.removeAt(index);
   }
 
   onFileChange(event) {
-    this.touched = true;
+    this.t.markAllAsTouched();
     if (event.target.files && event.target.files.length) {
       for (let i = 0; i < event.target.files.length; i++) {
         let reader = new FileReader();
-        const [file] = event.target.files;
+        const file = event.target.files[i];
         const fileName = file.name;
         reader.onload = () => {
           this.t.push(

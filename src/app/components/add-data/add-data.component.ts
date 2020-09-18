@@ -16,6 +16,10 @@ export class AddDataComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
+  get stepLength() {
+    return STEP_ITEMS.length;
+  }
+
   get activeStepLabel() {
     return STEP_ITEMS[this.currentStep].label;
   }
