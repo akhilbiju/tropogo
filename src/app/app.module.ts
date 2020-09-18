@@ -5,6 +5,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,8 +41,11 @@ import { SelectboxComponent } from './shared/selectbox/selectbox.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatInputModule,
+    MatNativeDateModule,
     MatRadioModule,
     MatExpansionModule,
+    MatSelectModule,
+    MatDatepickerModule,
     MatMenuModule,
     ReactiveFormsModule,
     AppRoutingModule,

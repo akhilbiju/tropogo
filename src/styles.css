@@ -52,3 +52,15 @@ body {
 .mat-menu-panel {
   background: white !important;
 }
+
+.mat-select-arrow {
+  color: black !important;
+}
+
+.mat-radio-button {
+  margin-left: 16px;
+}
+
+.mat-radio-label-content {
+  font-size: 12px;
+}

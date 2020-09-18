@@ -1,6 +1,7 @@
 .add-section {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 .add-section>* {
@@ -26,4 +27,53 @@
 button[mat-menu-item] {
     display: flex;
     align-items: center;
+}
+
+.error-border {
+    border: 1px solid red !important;
+}
+
+.error-text {
+    color: red !important;
+}
+
+.group-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.weekend {
+    display: flex;
+}
+
+.multi-box {
+    display: flex;
+}
+
+.start-content, .end-content {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    min-width: 170px;
+    justify-content: space-between;
+}
+
+.inputText {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-size: 13px;
+}
+
+.inputText:focus {
+    outline: none;
+    box-shadow: none;
 }

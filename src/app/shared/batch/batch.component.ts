@@ -9,6 +9,20 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class BatchComponent implements OnInit {
   field: any;
   group: FormGroup;
+  monthShortNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
 
   get f() {
     return this.group.controls;
@@ -19,17 +33,28 @@ export class BatchComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  updateForm() {}
-
   ngOnInit(): void {
     if (!this.t.controls.length) {
       this.t.push(this.createInitalGroup());
     }
   }
 
+  extractDate(group: FormGroup, control) {
+    const value = group.get(control).value;
+    if (!value) {
+      return 'DD MMM';
+    }
+    const day = `0${value.getDate()}`.slice(-2);
+    const month = this.monthShortNames[value.getMonth()];
+    return `${day} ${month}`;
+  }
+
   createInitalGroup() {
     return this.fb.group({
-      name: ['', Validators.required],
+      WeekendCourse: ['', Validators.required],
+      StartDate: ['', Validators.required],
+      EndDate: ['', Validators.required],
+      Cost: ['', Validators.required],
     });
   }
 

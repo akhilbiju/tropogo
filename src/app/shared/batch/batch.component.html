@@ -1,10 +1,54 @@
 <div class="batch-conatiner">
   <mat-accordion multi>
-    <mat-expansion-panel *ngFor="let batch of t.controls; let i = index">
-      <mat-expansion-panel-header>
-        <mat-panel-title> {{ "Batch" + (i + 1) }}</mat-panel-title>
+    <mat-expansion-panel
+      [formGroup]="batch"
+      *ngFor="let batch of t.controls; let i = index"
+    >
+      <mat-expansion-panel-header [formGroup]="batch">
+        <mat-panel-title
+          [ngClass]="{
+            'error-text': batch.invalid && batch.touched
+          }"
+        >
+          {{ "Batch " + (i + 1) }}</mat-panel-title
+        >
         <mat-panel-description>
-          Type your name and age
+          <div class="date-container">
+            <div class="start-content">
+              <input
+                style="display: none"
+                formControlName="StartDate"
+                matInput
+                [matDatepicker]="picker"
+              />
+              <mat-datepicker #picker></mat-datepicker>
+              <img
+                (click)="onEvent($event)"
+                src="assets/ic_datepicker.png"
+                (click)="picker.open()"
+              />
+              <span style="text-transform: uppercase">{{
+                extractDate(batch, "StartDate")
+              }}</span>
+            </div>
+            <div class="end-content">
+              <input
+                style="display: none"
+                formControlName="EndDate"
+                matInput
+                [matDatepicker]="pickerEnd"
+              />
+              <mat-datepicker #pickerEnd></mat-datepicker>
+              <img
+                (click)="onEvent($event)"
+                src="assets/ic_datepicker.png"
+                (click)="pickerEnd.open()"
+              />
+              <span style="text-transform: uppercase">{{
+                extractDate(batch, "EndDate")
+              }}</span>
+            </div>
+          </div>
           <div class="more-control" (click)="onEvent($event)">
             <img [matMenuTriggerFor]="menu" src="/assets/ic_moreoptions.png" />
             <mat-menu #menu="matMenu">
@@ -20,14 +64,51 @@
           </div>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <div></div>
-      <mat-form-field [formGroup]="batch">
-        <input matInput formControlName="name" />
-      </mat-form-field>
+      <div class="group-container">
+        <div class="location">
+          <input type="text" />
+        </div>
+        <div class="multi-box">
+          <input type="text" />
+          <div>
+            <span style="font-size: 12px; font-weight: 500"
+              >Course Cost (Ex GST)</span
+            >
+            <input
+              class="inputText"
+              [ngClass]="{
+                'error-border':
+                  batch.get('Cost').errors && batch.get('Cost').touched
+              }"
+              formControlName="Cost"
+              placeholder="Rs."
+            />
+          </div>
+        </div>
+        <div class="weekend">
+          <span
+            [ngClass]="{
+              'error-text':
+                batch.get('WeekendCourse').errors &&
+                batch.get('WeekendCourse').touched
+            }"
+            style="font-size: 12px"
+            >Is this a weekend course?</span
+          >
+          <div class="container">
+            <mat-radio-group formControlName="WeekendCourse">
+              <mat-radio-button value="yes">YES</mat-radio-button>
+              <mat-radio-button value="no">NO</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
-  <span (click)="addBatch()" class="add-section">
-    <img height="20px" src="assets/add_arrow.png" />
-    <span class="add-text">Add another course date</span>
+  <span class="add-section">
+    <img (click)="addBatch()" height="20px" src="assets/add_arrow.png" />
+    <span (click)="addBatch()" style="margin-left: 3px" class="add-text"
+      >Add another course date</span
+    >
   </span>
 </div>
