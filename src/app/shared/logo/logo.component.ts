@@ -16,7 +16,7 @@ export class LogoComponent implements OnInit {
   ngOnInit(): void {}
 
   getUrl() {
-    const placeHolder = 'assets/old-school.png';
+    const placeHolder = 'assets/ic_logoiid.png';
     let selectedImage = null;
     if (this.group.get(this.field.name).value) {
       selectedImage = this.group.get(this.field.name).value.data;

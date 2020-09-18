@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +39,8 @@ import { SelectboxComponent } from './shared/selectbox/selectbox.component';
     MatSliderModule,
     MatInputModule,
     MatRadioModule,
+    MatExpansionModule,
+    MatMenuModule,
     ReactiveFormsModule,
     AppRoutingModule,
   ],

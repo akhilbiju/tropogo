@@ -1,11 +1,22 @@
 <div class="input-container" [formGroup]="group">
   <span class="label-header">{{ field.label }}</span>
-  <input
-    class="inputText"
-    [ngClass]="{ 'error-border': isError && formField.touched }"
-    [formControlName]="field.name"
-    [placeholder]="field.placeholder"
-  />
+  <ng-container *ngIf="field.inputType === 'textarea'">
+    <textarea
+      class="inputText"
+      [ngClass]="{ 'error-border': isError && formField.touched }"
+      [formControlName]="field.name"
+      [placeholder]="field.placeholder"
+      rows="6"
+    ></textarea>
+  </ng-container>
+  <ng-container *ngIf="field.inputType !== 'textarea'">
+    <input
+      class="inputText"
+      [ngClass]="{ 'error-border': isError && formField.touched }"
+      [formControlName]="field.name"
+      [placeholder]="field.placeholder"
+    />
+  </ng-container>
   <p class="error-text" *ngIf="isError && formField.touched">
     {{ getFirstError.message }}
   </p>

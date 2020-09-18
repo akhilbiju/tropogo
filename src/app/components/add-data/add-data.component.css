@@ -6,7 +6,8 @@
 .content-holder {
   background: white;
   max-width: 450px;
-  width: 90%;
+  width: 100%;
+  margin-bottom: 60px;
 }
 
 .controls {
@@ -34,6 +35,7 @@
   outline: none;
   border: 1px solid black;
 }
+
 .control-button:last-child {
   color: white;
   background: #04c466;

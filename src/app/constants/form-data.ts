@@ -106,6 +106,22 @@ const DATA_STEP_2 = [
     validations: [],
     value: [],
   },
+  {
+    type: 'input',
+    label: 'Course details',
+    inputType: 'textarea',
+    name: 'CourseDetails',
+    placeholder: 'Add details',
+    isArray: false,
+    validations: [
+      {
+        name: 'required',
+        validator: Validators.required,
+        message: 'Add course details',
+      },
+    ],
+    value: null,
+  },
 ];
 
 const STEP_ITEMS = [

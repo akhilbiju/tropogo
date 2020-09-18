@@ -44,4 +44,8 @@ export class BatchComponent implements OnInit {
   addBatch() {
     this.t.push(this.createInitalGroup());
   }
+
+  onEvent($event) {
+    $event.stopPropagation();
+  }
 }

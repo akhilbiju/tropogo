@@ -16,10 +16,39 @@ body {
 }
 
 .mat-radio-inner-circle, .mat-radio-container, .mat-radio-outer-circle {
-  width: 15px !important;
-  height: 15px !important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
 .mat-radio-inner-circle {
   background-color: #04c466 !important;
+}
+
+.mat-expansion-panel {
+  background: #f7f7f7 !important;
+  color: black !important;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 5px !important;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+  color: black !important;
+  font-weight: 500;
+  font-size: 13px !important;
+  align-items: center;
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-expansion-indicator::after {
+  color: #04c466 !important;
+}
+
+.mat-menu-panel {
+  background: white !important;
 }

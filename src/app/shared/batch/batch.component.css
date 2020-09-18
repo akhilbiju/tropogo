@@ -1,0 +1,29 @@
+.add-section {
+    display: flex;
+    align-items: center;
+}
+
+.add-section>* {
+    cursor: pointer;
+}
+
+.more-control {
+    display: flex;
+    align-items: center;
+}
+
+.add-text {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+    color: #04c466;
+}
+
+.batch-conatiner {
+    margin-bottom: 10px;
+}
+
+button[mat-menu-item] {
+    display: flex;
+    align-items: center;
+}

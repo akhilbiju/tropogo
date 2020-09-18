@@ -1,8 +1,33 @@
-<div *ngFor="let batch of t.controls; let i = index">
-  <mat-form-field [formGroup]="batch">
-    <input matInput formControlName="name" />
-  </mat-form-field>
-  <button (click)="deleteBatch(i)">remove</button>
-  <button (click)="resetBatch(batch)">reset</button>
+<div class="batch-conatiner">
+  <mat-accordion multi>
+    <mat-expansion-panel *ngFor="let batch of t.controls; let i = index">
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ "Batch" + (i + 1) }}</mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+          <div class="more-control" (click)="onEvent($event)">
+            <img [matMenuTriggerFor]="menu" src="/assets/ic_moreoptions.png" />
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="resetBatch(batch)">
+                <img width="18px" src="assets/ic_refresh.png" />
+                <span style="padding-left: 5px; color: black">Reset</span>
+              </button>
+              <button mat-menu-item (click)="deleteBatch(i)">
+                <img src="assets/ic_delete.png" />
+                <span style="padding-left: 5px; color: red">Delete</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div></div>
+      <mat-form-field [formGroup]="batch">
+        <input matInput formControlName="name" />
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <span (click)="addBatch()" class="add-section">
+    <img height="20px" src="assets/add_arrow.png" />
+    <span class="add-text">Add another course date</span>
+  </span>
 </div>
-<button (click)="addBatch()">Add</button>
