@@ -64,15 +64,35 @@ const DATA_STEP_1 = [
 const DATA_STEP_2 = [
   {
     type: 'input',
-    label: 'LastName',
+    label: 'Course name',
     inputType: 'text',
-    name: 'LastName',
+    name: 'CourseName',
+    placeholder: 'Add course name',
     isArray: false,
     validations: [
       {
         name: 'required',
         validator: Validators.required,
-        message: 'LastName needed',
+        message: 'Add course name',
+      },
+    ],
+    value: null,
+  },
+  {
+    type: 'select',
+    label: 'Aircraft type',
+    inputType: 'text',
+    name: 'AircraftType',
+    isArray: false,
+    options: [
+      { label: 'Multi Rotar', value: 'multirotar' },
+      { label: 'Fixed Wing', value: 'fixedwing' },
+    ],
+    validations: [
+      {
+        name: 'required',
+        validator: Validators.required,
+        message: 'Select Aircraft Type',
       },
     ],
     value: null,

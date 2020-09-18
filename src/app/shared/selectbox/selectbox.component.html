@@ -1,0 +1,15 @@
+<div class="input-container" [formGroup]="group">
+  <span class="label-header">{{ field.label }}</span>
+  <div class="container">
+    <mat-radio-group [formControlName]="field.name">
+      <mat-radio-button
+        *ngFor="let option of field.options"
+        [value]="option.value"
+        >{{ option.label }}</mat-radio-button
+      >
+    </mat-radio-group>
+    <p class="error-text" *ngIf="isError && formField.touched">
+      {{ getFirstError.message }}
+    </p>
+  </div>
+</div>

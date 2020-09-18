@@ -1,11 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
+html, body {
   height: 100%;
   background: #f7f7f7;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-radio-outer-circle {
+  border-color: black !important;
+  border-width: 1px !important;
+}
+
+.mat-radio-inner-circle, .mat-radio-container, .mat-radio-outer-circle {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.mat-radio-inner-circle {
+  background-color: #04c466 !important;
 }

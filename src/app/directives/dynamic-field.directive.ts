@@ -10,12 +10,14 @@ import { BatchComponent } from '../shared/batch/batch.component';
 import { FileUploadComponent } from '../shared/file-upload/file-upload.component';
 import { InputComponent } from '../shared/input/input.component';
 import { LogoComponent } from '../shared/logo/logo.component';
+import { SelectboxComponent } from '../shared/selectbox/selectbox.component';
 
 const componentMapper = {
   input: InputComponent,
   batch: BatchComponent,
   files: FileUploadComponent,
   logo: LogoComponent,
+  select: SelectboxComponent,
 };
 
 @Directive({
