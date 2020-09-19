@@ -50,6 +50,7 @@ const DATA_STEP_1 = [
     inputType: 'file',
     name: 'gallery',
     isArray: true,
+    multi: true,
     validations: [
       {
         name: 'required',
@@ -101,7 +102,7 @@ const DATA_STEP_2 = [
     type: 'batch',
     label: 'Batch',
     inputType: 'batch',
-    name: 'batch',
+    name: 'Batch',
     isArray: true,
     validations: [],
     value: [],

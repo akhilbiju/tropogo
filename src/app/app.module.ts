@@ -8,6 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LogoComponent } from './shared/logo/logo.component';
 import { SelectboxComponent } from './shared/selectbox/selectbox.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { SelectboxComponent } from './shared/selectbox/selectbox.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     MatSliderModule,
     MatInputModule,
     MatNativeDateModule,
@@ -49,6 +52,7 @@ import { SelectboxComponent } from './shared/selectbox/selectbox.component';
     MatMenuModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NgxJsonViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

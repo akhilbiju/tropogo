@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { STEP_ITEMS } from 'src/app/constants/form-data';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
@@ -14,8 +15,13 @@ export class AddDataComponent implements OnInit {
   currentStep = 0;
   fields = [];
   masterForm: FormGroup;
+  formResult = null;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    public dialog: MatDialog
+  ) {}
 
   get stepLength() {
     return STEP_ITEMS.length;
@@ -76,6 +82,7 @@ export class AddDataComponent implements OnInit {
 
   goToPrevStep() {
     this.updateControl();
+    this.formResult = null;
     this.currentStep -= 1;
     this.createForm();
   }
@@ -85,7 +92,8 @@ export class AddDataComponent implements OnInit {
       this.dynamicForm.form.markAllAsTouched();
     } else {
       this.updateControl();
-      console.log(this.masterForm.value);
+      alert('Preview added at the end of this form!');
+      this.formResult = this.masterForm.value;
     }
   }
 

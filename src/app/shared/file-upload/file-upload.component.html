@@ -17,11 +17,12 @@
     </label>
   </div>
   <input
+    [disabled]="!field.multi && t.controls.length === 1"
     #fileInput
     [id]="field.name"
     type="file"
     (change)="onFileChange($event)"
-    multiple
+    [multiple]="field.multi"
   />
   <div class="image-list" *ngFor="let image of t.controls; let i = index">
     <span class="list-item-text">{{ image.get("name").value }}</span>
