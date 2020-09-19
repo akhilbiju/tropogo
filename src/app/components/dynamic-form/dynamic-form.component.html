@@ -1,4 +1,7 @@
-<h2>{{ title }}</h2>
+<div class="header">
+  <h2>{{ title }}</h2>
+  <img class="close-button" (click)="skipPage()" src="assets/closed.png" />
+</div>
 <form class="dynamic-form-container" [formGroup]="form">
   <ng-container
     dynamicField

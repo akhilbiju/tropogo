@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -11,7 +12,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   @Input() title: string;
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.form = this.createControl();
@@ -49,5 +50,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
       return Validators.compose(validationList);
     }
     return null;
+  }
+
+  skipPage() {
+    this.router.navigateByUrl('/');
   }
 }

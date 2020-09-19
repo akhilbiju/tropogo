@@ -11,23 +11,23 @@
   </div>
 </div>
 <div class="controls">
-  <button class="control-button" (click)="skipPage()">SKIP</button>
+  <button class="control-button skip" (click)="skipPage()">SKIP</button>
   <button
-    class="control-button"
+    class="control-button back"
     *ngIf="currentStep !== 0"
     (click)="goToPrevStep()"
   >
     BACK
   </button>
   <button
-    class="control-button"
+    class="control-button next"
     *ngIf="currentStep < stepLength - 1"
     (click)="goToNextStep()"
   >
     NEXT
   </button>
   <button
-    class="control-button"
+    class="control-button save"
     *ngIf="currentStep === stepLength - 1"
     (click)="submit()"
   >

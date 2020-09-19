@@ -18,5 +18,27 @@ h2 {
   font-weight: 600;
   font-size: 25px;
   padding: 10px;
+  margin: 0px;
+}
+
+.header {
   border-bottom: 1px solid #04c466;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  display: none;
+  height: 30px;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 360px) {
+  .close-button {
+    display: block;
+    height: 30px;
+    margin: 0px 5px;
+  }
 }
