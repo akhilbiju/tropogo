@@ -104,9 +104,13 @@ export class AddDataComponent implements OnInit {
         .get('Institute')
         .get(controlName) as FormArray;
       list.controls.forEach((group: FormGroup) => {
-        group.get('data').setValue('Removed for preview');
+        group.get('data').setValue('Large data - Removed from preview');
       });
     });
+    this.masterForm
+      .get('Institute')
+      .get('Logo')
+      .setValue('Large data - Removed from preview');
   }
 
   skipPage() {
