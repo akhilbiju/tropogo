@@ -5,10 +5,6 @@
       [title]="activeStepHeader"
       (skip)="skipPage()"
     ></app-dynamic-form>
-    <div *ngIf="formResult && currentStep === stepLength - 1">
-      <h1>Preview</h1>
-      <ngx-json-viewer [json]="formResult" [expanded]="false"></ngx-json-viewer>
-    </div>
   </div>
 </div>
 <div class="controls">

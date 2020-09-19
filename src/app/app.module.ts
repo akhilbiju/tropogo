@@ -25,8 +25,9 @@ import { LogoComponent } from './shared/logo/logo.component';
 import { SelectboxComponent } from './shared/selectbox/selectbox.component';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DiscardModalComponent } from './shared/modals/discard-modal.component';
+import { DiscardModalComponent } from './shared/modals/discard/discard-modal.component';
 import { MatButtonModule } from '@angular/material/button';
+import { PreviewComponent } from './shared/modals/preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MatButtonModule } from '@angular/material/button';
     LogoComponent,
     SelectboxComponent,
     DiscardModalComponent,
+    PreviewComponent,
   ],
   imports: [
     BrowserModule,

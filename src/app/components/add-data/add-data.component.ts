@@ -3,7 +3,8 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { STEP_ITEMS } from 'src/app/constants/form-data';
-import { DiscardModalComponent } from 'src/app/shared/modals/discard-modal.component';
+import { DiscardModalComponent } from 'src/app/shared/modals/discard/discard-modal.component';
+import { PreviewComponent } from 'src/app/shared/modals/preview/preview.component';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
 
 @Component({
@@ -16,7 +17,6 @@ export class AddDataComponent implements OnInit {
   currentStep = 0;
   fields = [];
   masterForm: FormGroup;
-  formResult = null;
 
   constructor(
     private fb: FormBuilder,
@@ -85,7 +85,6 @@ export class AddDataComponent implements OnInit {
 
   goToPrevStep() {
     this.updateControl();
-    this.formResult = null;
     this.currentStep -= 1;
     this.createForm();
   }
@@ -95,9 +94,8 @@ export class AddDataComponent implements OnInit {
       this.dynamicForm.form.markAllAsTouched();
     } else {
       this.updateControl();
-      alert('Preview added at the end of this form!');
       this.removeImageData();
-      this.formResult = this.masterForm.value;
+      this.dialog.open(PreviewComponent, { data: this.masterForm.value });
     }
   }
 
