@@ -1,4 +1,8 @@
 <div class="batch-conatiner">
+  <div class="header-section">
+    <span style="margin-left: 5px; margin-right: 32px">batch</span
+    ><span style="margin-right: 25px">start date</span><span>end date</span>
+  </div>
   <mat-accordion multi>
     <mat-expansion-panel
       [formGroup]="batch"
@@ -76,6 +80,7 @@
             >
             <input
               class="inputText"
+              type="number"
               [ngClass]="{
                 'error-border':
                   batch.get('Cost').errors && batch.get('Cost').touched
