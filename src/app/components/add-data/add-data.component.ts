@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { STEP_ITEMS } from 'src/app/constants/form-data';
+import { DiscardModalComponent } from 'src/app/shared/modals/discard-modal.component';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
 
 @Component({
@@ -69,6 +70,7 @@ export class AddDataComponent implements OnInit {
       this.masterForm.removeControl(this.activeStepLabel);
     }
     this.masterForm.addControl(this.activeStepLabel, this.dynamicForm.form);
+    this.masterForm.get(this.activeStepLabel).markAsDirty();
   }
 
   goToNextStep() {
@@ -115,6 +117,17 @@ export class AddDataComponent implements OnInit {
   }
 
   skipPage() {
-    this.router.navigateByUrl('/');
+    if (this.masterForm.dirty || this.dynamicForm.form.dirty) {
+      this.dialog
+        .open(DiscardModalComponent)
+        .afterClosed()
+        .subscribe((data) => {
+          if (data) {
+            this.router.navigateByUrl('/');
+          }
+        });
+    } else {
+      this.router.navigateByUrl('/');
+    }
   }
 }

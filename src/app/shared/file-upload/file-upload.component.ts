@@ -53,7 +53,6 @@ export class FileUploadComponent implements OnInit {
   }
 
   onFileChange(event) {
-    this.t.markAllAsTouched();
     if (event.target.files && event.target.files.length) {
       for (let i = 0; i < event.target.files.length; i++) {
         let reader = new FileReader();
@@ -66,12 +65,12 @@ export class FileUploadComponent implements OnInit {
               name: fileName,
             })
           );
-          // need to run CD since file load runs outside of zone
           this.cd.markForCheck();
           this.inputField.nativeElement.value = '';
         };
         reader.readAsDataURL(file);
       }
     }
+    this.t.markAllAsTouched();
   }
 }

@@ -24,6 +24,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { LogoComponent } from './shared/logo/logo.component';
 import { SelectboxComponent } from './shared/selectbox/selectbox.component';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DiscardModalComponent } from './shared/modals/discard-modal.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { CommonModule } from '@angular/common';
     DashboardComponent,
     LogoComponent,
     SelectboxComponent,
+    DiscardModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatNativeDateModule,
     MatRadioModule,
+    MatDialogModule,
+    MatButtonModule,
     MatExpansionModule,
     MatSelectModule,
     MatDatepickerModule,

@@ -1,6 +1,13 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -10,9 +17,10 @@ import { Router } from '@angular/router';
 export class DynamicFormComponent implements OnInit, OnChanges {
   @Input() fields: any[] = [];
   @Input() title: string;
+  @Output() skip = new EventEmitter();
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.form = this.createControl();
@@ -53,6 +61,6 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   }
 
   skipPage() {
-    this.router.navigateByUrl('/');
+    this.skip.emit();
   }
 }

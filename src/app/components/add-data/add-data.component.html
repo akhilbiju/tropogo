@@ -3,6 +3,7 @@
     <app-dynamic-form
       [fields]="fields"
       [title]="activeStepHeader"
+      (skip)="skipPage()"
     ></app-dynamic-form>
     <div *ngIf="formResult && currentStep === stepLength - 1">
       <h1>Preview</h1>

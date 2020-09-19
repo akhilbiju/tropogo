@@ -68,3 +68,8 @@ body {
 .mat-menu-item[disabled] {
   opacity: 0.5;
 }
+
+.mat-dialog-container {
+  background: white !important;
+  color: black !important;
+}

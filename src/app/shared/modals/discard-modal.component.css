@@ -1,0 +1,12 @@
+h1 {
+    color: red;
+}
+
+.align-end {
+    justify-content: flex-end;
+}
+
+.red-button {
+    background: red;
+    color: white;
+}
