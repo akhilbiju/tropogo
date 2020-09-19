@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { STEP_ITEMS } from 'src/app/constants/form-data';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
 
@@ -14,7 +15,7 @@ export class AddDataComponent implements OnInit {
   fields = [];
   masterForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   get stepLength() {
     return STEP_ITEMS.length;
@@ -86,5 +87,9 @@ export class AddDataComponent implements OnInit {
       this.updateControl();
       console.log(this.masterForm.value);
     }
+  }
+
+  skipPage() {
+    this.router.navigateByUrl('/');
   }
 }
