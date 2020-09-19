@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { STEP_ITEMS } from 'src/app/constants/form-data';
@@ -93,8 +93,20 @@ export class AddDataComponent implements OnInit {
     } else {
       this.updateControl();
       alert('Preview added at the end of this form!');
+      this.removeImageData();
       this.formResult = this.masterForm.value;
     }
+  }
+
+  removeImageData() {
+    ['Brochure', 'Certificate', 'Gallery'].forEach((controlName: any) => {
+      const list = this.masterForm
+        .get('Institute')
+        .get(controlName) as FormArray;
+      list.controls.forEach((group: FormGroup) => {
+        group.get('data').setValue('Removed for preview');
+      });
+    });
   }
 
   skipPage() {
