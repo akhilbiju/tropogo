@@ -49,6 +49,7 @@ export class FileUploadComponent implements OnInit {
 
   deleteImage(index) {
     this.t.markAllAsTouched();
+    this.t.markAsDirty();
     this.t.removeAt(index);
   }
 
@@ -72,5 +73,6 @@ export class FileUploadComponent implements OnInit {
       }
     }
     this.t.markAllAsTouched();
+    this.t.markAsDirty();
   }
 }

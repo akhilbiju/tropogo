@@ -39,6 +39,7 @@ export class LogoComponent implements OnInit {
         };
         reader.readAsDataURL(file);
       }
+      this.group.get(this.field.name).markAsDirty();
     }
   }
 }
