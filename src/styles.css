@@ -68,6 +68,8 @@ body {
 
 .mat-menu-item[disabled], .disable-view {
   opacity: 0.5;
+  pointer-events: none;
+  cursor: unset;
 }
 
 .mat-dialog-container {
@@ -78,4 +80,5 @@ body {
 .mat-expansion-panel-header-title {
   white-space: nowrap;
   flex-grow: 0 !important;
+  user-select: none;
 }

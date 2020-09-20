@@ -11,7 +11,11 @@
       <span class="label-header">{{ field.label }}</span>
       <span class="optional-text" *ngIf="!isRequired">(optional)</span>
     </div>
-    <label class="label-container" [for]="field.name">
+    <label
+      class="label-container"
+      [class.disable-view]="IsDisabled"
+      [for]="field.name"
+    >
       <img
         [class.disable-view]="IsDisabled"
         height="12px"

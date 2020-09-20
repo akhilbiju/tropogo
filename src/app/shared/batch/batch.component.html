@@ -26,14 +26,15 @@
                 [matDatepicker]="picker"
               />
               <mat-datepicker #picker></mat-datepicker>
-              <img
-                (click)="onEvent($event)"
-                src="assets/ic_datepicker.png"
-                (click)="picker.open()"
-              />
-              <span class="date-label">{{
-                extractDate(batch, "StartDate")
-              }}</span>
+              <div
+                style="display: flex"
+                (click)="onEvent($event); picker.open()"
+              >
+                <img src="assets/ic_datepicker.png" />
+                <span class="date-label">{{
+                  extractDate(batch, "StartDate")
+                }}</span>
+              </div>
             </div>
             <div class="end-content">
               <input
@@ -43,14 +44,15 @@
                 [matDatepicker]="pickerEnd"
               />
               <mat-datepicker #pickerEnd></mat-datepicker>
-              <img
-                (click)="onEvent($event)"
-                src="assets/ic_datepicker.png"
-                (click)="pickerEnd.open()"
-              />
-              <span class="date-label">{{
-                extractDate(batch, "EndDate")
-              }}</span>
+              <div
+                style="display: flex"
+                (click)="onEvent($event); pickerEnd.open()"
+              >
+                <img (click)="onEvent($event)" src="assets/ic_datepicker.png" />
+                <span class="date-label">{{
+                  extractDate(batch, "EndDate")
+                }}</span>
+              </div>
             </div>
           </div>
           <div class="more-control" (click)="onEvent($event)">
