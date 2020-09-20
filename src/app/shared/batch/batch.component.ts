@@ -46,9 +46,12 @@ export class BatchComponent implements OnInit {
   }
 
   getFilterValue(batch: FormGroup) {
-    return this.cities.filter((data) =>
-      data.toLowerCase().includes(batch.get('City').value.toLowerCase())
-    );
+    const controlValue = batch.get('City').value;
+    if (controlValue) {
+      return this.cities.filter((data) =>
+        data.toLowerCase().includes(controlValue.toLowerCase())
+      );
+    }
   }
 
   constructor(private fb: FormBuilder) {}
