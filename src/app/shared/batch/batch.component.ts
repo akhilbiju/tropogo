@@ -52,6 +52,7 @@ export class BatchComponent implements OnInit {
         data.toLowerCase().includes(controlValue.toLowerCase())
       );
     }
+    return this.cities;
   }
 
   constructor(private fb: FormBuilder) {}
