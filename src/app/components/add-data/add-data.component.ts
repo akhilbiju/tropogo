@@ -43,6 +43,7 @@ export class AddDataComponent implements OnInit {
 
   createForm() {
     if (this.masterForm.get(this.activeStepLabel)) {
+      this.masterForm.get(this.activeStepLabel).markAsUntouched();
       this.replaceSavedValue();
     } else {
       this.fields = [...STEP_ITEMS[this.currentStep].data];

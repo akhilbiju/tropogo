@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-batch',
@@ -7,6 +8,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./batch.component.css'],
 })
 export class BatchComponent implements OnInit {
+  @ViewChild(MatAccordion) accordion: MatAccordion;
   field: any;
   group: FormGroup;
   monthShortNames = [
@@ -93,6 +95,7 @@ export class BatchComponent implements OnInit {
   }
 
   addBatch() {
+    this.accordion.closeAll();
     this.t.push(this.createInitalGroup());
   }
 
