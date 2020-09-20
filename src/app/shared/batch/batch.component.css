@@ -42,6 +42,9 @@ button[mat-menu-item] {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 11px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .group-container {
@@ -118,4 +121,13 @@ button[mat-menu-item] {
   .multi-box {
     flex-direction: column;
   }
+}
+
+.batch-error {
+  right: 0px;
+  color: red;
+  margin: 0px;
+  font-size: 10px;
+  font-weight: normal;
+  text-transform: initial;
 }

@@ -1,7 +1,12 @@
 <div class="batch-conatiner">
   <div class="header-section">
-    <span style="margin-left: 5px; margin-right: 32px">batch</span
-    ><span style="margin-right: 25px">start date</span><span>end date</span>
+    <div>
+      <span style="margin-left: 5px; margin-right: 32px">batch</span
+      ><span style="margin-right: 25px">start date</span><span>end date</span>
+    </div>
+    <span *ngIf="t.invalid && t.touched" class="batch-error"
+      >Incomplete Details</span
+    >
   </div>
   <mat-accordion multi>
     <mat-expansion-panel
