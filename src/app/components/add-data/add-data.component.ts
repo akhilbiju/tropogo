@@ -98,6 +98,7 @@ export class AddDataComponent implements OnInit {
       this.dynamicForm.showError = true;
       this.dynamicForm.form.markAllAsTouched();
     } else {
+      this.dynamicForm.showError = false;
       this.updateControl();
       this.removeImageData();
       this.dialog.open(PreviewComponent, { data: this.masterForm.value });
