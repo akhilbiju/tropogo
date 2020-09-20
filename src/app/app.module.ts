@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -58,6 +59,7 @@ import { PreviewComponent } from './shared/modals/preview/preview.component';
     MatSelectModule,
     MatDatepickerModule,
     MatMenuModule,
+    MatAutocompleteModule,
     ReactiveFormsModule,
     AppRoutingModule,
     NgxJsonViewerModule,

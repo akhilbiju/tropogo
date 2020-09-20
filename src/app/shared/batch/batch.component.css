@@ -56,6 +56,7 @@ button[mat-menu-item] {
 
 .multi-box {
   display: flex;
+  justify-content: space-between;
 }
 
 .start-content, .end-content {
@@ -69,6 +70,22 @@ button[mat-menu-item] {
   align-items: center;
   min-width: 170px;
   justify-content: space-between;
+}
+
+.locationBox, .costBox {
+  max-width: 150px;
+}
+
+.language-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+  flex: 1;
+}
+
+.cost-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .inputText {
@@ -89,4 +106,10 @@ button[mat-menu-item] {
 .date-label {
   text-transform: uppercase;
   min-width: 55px;
+}
+
+@media only screen and (max-width: 450px) {
+  .multi-box {
+    flex-direction: column;
+  }
 }

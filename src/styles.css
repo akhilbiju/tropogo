@@ -82,3 +82,44 @@ body {
   flex-grow: 0 !important;
   user-select: none;
 }
+
+.mat-option {
+  color: black !important;
+  background: white !important;
+}
+
+.mat-option:hover {
+  background: #f7f7f7 !important;
+}
+
+.mat-select {
+  border: 1px solid black !important;
+  background: white !important;
+}
+
+.mat-select-value, .mat-select-placeholder {
+  color: black !important;
+  font-size: 13px !important;
+  line-height: 27px !important;
+}
+
+.mat-pseudo-checkbox {
+  border-color: #04c466 !important;
+}
+
+.mat-pseudo-checkbox::after {
+  color: white !important;
+}
+
+.mat-pseudo-checkbox-checked {
+  background: #04c466 !important;
+}
+
+.mat-select-trigger {
+  height: 27px !important;
+  padding-left: 5px !important;
+}
+
+.mat-select-placeholder {
+  color: #636c72 !important;
+}

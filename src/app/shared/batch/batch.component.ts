@@ -23,12 +23,32 @@ export class BatchComponent implements OnInit {
     'Nov',
     'Dec',
   ];
+  cities = ['Kolkata', 'Bengaluru', 'Mumbai', 'New Delhi', 'Pune', 'Chennai'];
+  languageList = [
+    'English',
+    'Hindi',
+    'Kannada',
+    'Malayalam',
+    'Tamil',
+    'Gujarati',
+    'Telugu',
+  ];
 
   get f() {
     return this.group.controls;
   }
   get t() {
     return this.f[this.field.name] as FormArray;
+  }
+
+  getLangControl(group: FormGroup) {
+    return group.get('Language');
+  }
+
+  getFilterValue(batch: FormGroup) {
+    return this.cities.filter((data) =>
+      data.toLowerCase().includes(batch.get('City').value.toLowerCase())
+    );
   }
 
   constructor(private fb: FormBuilder) {}
@@ -54,7 +74,9 @@ export class BatchComponent implements OnInit {
       WeekendCourse: ['', Validators.required],
       StartDate: ['', Validators.required],
       EndDate: ['', Validators.required],
+      City: ['', Validators.required],
       Cost: ['', Validators.required],
+      Language: ['', Validators.required],
     });
   }
 

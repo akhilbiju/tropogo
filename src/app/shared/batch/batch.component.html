@@ -48,7 +48,7 @@
                 style="display: flex"
                 (click)="onEvent($event); pickerEnd.open()"
               >
-                <img (click)="onEvent($event)" src="assets/ic_datepicker.png" />
+                <img src="assets/ic_datepicker.png" />
                 <span class="date-label">{{
                   extractDate(batch, "EndDate")
                 }}</span>
@@ -75,13 +75,72 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="group-container">
+        <span style="font-size: 12px; font-weight: 500">Course Location</span>
+        <input
+          type="text"
+          class="inputText locationBox"
+          placeholder="Search Location"
+          formControlName="City"
+          [matAutocomplete]="auto"
+          [ngClass]="{
+            'error-border':
+              batch.get('City').errors && batch.get('City').touched
+          }"
+        />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let option of getFilterValue(batch)"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
         <div class="multi-box">
-          <div>
+          <div class="language-container">
+            <span style="font-size: 12px; font-weight: 500"
+              >Course Language</span
+            >
+            <mat-select
+              [ngClass]="{
+                'error-border':
+                  batch.get('Language').errors && batch.get('Language').touched
+              }"
+              placeholder="Select Languages"
+              formControlName="Language"
+              multiple
+            >
+              <mat-select-trigger>
+                {{
+                  getLangControl(batch).value
+                    ? getLangControl(batch).value[0]
+                    : ""
+                }}
+                <span *ngIf="getLangControl(batch).value?.length > 1">
+                  (+{{ getLangControl(batch).value.length - 1 }}
+                  {{
+                    getLangControl(batch).value?.length === 2
+                      ? "other"
+                      : "others"
+                  }})
+                </span>
+              </mat-select-trigger>
+              <mat-option
+                *ngFor="let language of languageList"
+                [value]="language"
+                [disabled]="
+                  getLangControl(batch).value?.length > 2 &&
+                  !getLangControl(batch).value?.includes(language)
+                "
+                >{{ language }}</mat-option
+              >
+            </mat-select>
+          </div>
+          <div class="cost-container">
             <span style="font-size: 12px; font-weight: 500"
               >Course Cost (Ex GST)</span
             >
             <input
-              class="inputText"
+              class="inputText costBox"
               type="number"
               [ngClass]="{
                 'error-border':
