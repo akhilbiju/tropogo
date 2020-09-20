@@ -19,6 +19,7 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   @Input() title: string;
   @Output() skip = new EventEmitter();
   form: FormGroup;
+  showError = false;
 
   constructor(private fb: FormBuilder, public dialog: MatDialog) {}
 
@@ -62,5 +63,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
 
   skipPage() {
     this.skip.emit();
+  }
+
+  closeError() {
+    this.showError = false;
   }
 }

@@ -77,7 +77,9 @@ export class AddDataComponent implements OnInit {
   goToNextStep() {
     if (this.dynamicForm.form.invalid) {
       this.dynamicForm.form.markAllAsTouched();
+      this.dynamicForm.showError = true;
     } else {
+      this.dynamicForm.showError = false;
       this.updateControl();
       this.currentStep += 1;
       this.createForm();
@@ -88,10 +90,12 @@ export class AddDataComponent implements OnInit {
     this.updateControl();
     this.currentStep -= 1;
     this.createForm();
+    this.dynamicForm.showError = false;
   }
 
   submit() {
     if (this.dynamicForm.form.invalid) {
+      this.dynamicForm.showError = true;
       this.dynamicForm.form.markAllAsTouched();
     } else {
       this.updateControl();

@@ -50,12 +50,9 @@
     display: none;
   }
   .content-holder {
-    margin-bottom: 90px;
+    margin-bottom: 95px;
   }
-
-  .back,
-  .next,
-  .save {
+  .back, .next, .save {
     margin-left: 20px;
     margin-right: 20px;
   }

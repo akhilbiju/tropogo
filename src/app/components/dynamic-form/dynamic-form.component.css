@@ -42,3 +42,26 @@ h2 {
     margin: 0px 5px;
   }
 }
+
+.error-container {
+  display: flex;
+  background: #f1d6d6;
+  justify-content: space-between;
+  height: 30px;
+  align-items: center;
+  padding: 5px;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+}
+
+.error-text {
+  margin-left: 5px;
+  color: red;
+}
+
+.close-icon {
+  cursor: pointer;
+}

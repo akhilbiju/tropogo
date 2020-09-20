@@ -11,3 +11,10 @@
   >
   </ng-container>
 </form>
+<div *ngIf="showError" class="error-container">
+  <div class="error-content">
+    <img src="assets/ic_info.png" />
+    <span class="error-text">Fill in the required information to proceed.</span>
+  </div>
+  <img src="assets/ic_close.png" class="close-icon" (click)="closeError()" />
+</div>
