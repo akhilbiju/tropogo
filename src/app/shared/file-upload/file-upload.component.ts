@@ -33,6 +33,10 @@ export class FileUploadComponent implements OnInit {
   get formField() {
     return this.group.get(this.field.name);
   }
+
+  get IsDisabled() {
+    return !this.field.multi && this.t.controls.length === 1;
+  }
   constructor(private cd: ChangeDetectorRef, private fb: FormBuilder) {}
 
   setValidators() {

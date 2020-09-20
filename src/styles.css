@@ -31,6 +31,7 @@ body {
 
 .mat-expansion-panel-header {
   padding: 0 5px !important;
+  background: #f7f7f7 !important;
 }
 
 .mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
@@ -65,7 +66,7 @@ body {
   font-size: 12px;
 }
 
-.mat-menu-item[disabled] {
+.mat-menu-item[disabled], .disable-view {
   opacity: 0.5;
 }
 

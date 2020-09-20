@@ -85,3 +85,8 @@ button[mat-menu-item] {
   outline: none;
   box-shadow: none;
 }
+
+.date-label {
+  text-transform: uppercase;
+  min-width: 55px;
+}

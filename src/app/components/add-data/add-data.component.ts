@@ -52,7 +52,7 @@ export class AddDataComponent implements OnInit {
   replaceSavedValue() {
     const savedVal = this.masterForm.get(this.activeStepLabel).value;
     const templateData = [...STEP_ITEMS[this.currentStep].data];
-    for (let index = 1; index < templateData.length; index++) {
+    for (let index = 0; index < templateData.length; index++) {
       const cloneItem = { ...templateData[index] };
       if (cloneItem.isArray) {
         const controlGroup = this.masterForm.get(this.activeStepLabel);
