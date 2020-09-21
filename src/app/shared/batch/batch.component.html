@@ -1,7 +1,7 @@
 <div class="batch-conatiner">
   <div class="header-section">
     <div>
-      <span style="margin-left: 5px; margin-right: 32px">batch</span
+      <span class="batch-label">batch</span
       ><span style="margin-right: 25px">start date</span><span>end date</span>
     </div>
     <span *ngIf="t.invalid && t.touched" class="batch-error"
@@ -25,7 +25,7 @@
           <div class="date-container">
             <div class="start-content">
               <input
-                style="visibility: hidden; position: absolute"
+                class="date-input"
                 formControlName="StartDate"
                 matInput
                 [matDatepicker]="picker"
@@ -43,7 +43,7 @@
             </div>
             <div class="end-content">
               <input
-                style="visibility: hidden; position: absolute"
+                class="date-input"
                 formControlName="EndDate"
                 matInput
                 [matDatepicker]="pickerEnd"
@@ -80,17 +80,14 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="group-container">
-        <span style="font-size: 12px; font-weight: 500">Course Location</span>
+        <span class="labelText">Course Location</span>
         <input
           type="text"
           class="inputText locationBox"
           placeholder="Search Location"
           formControlName="City"
           [matAutocomplete]="auto"
-          [ngClass]="{
-            'error-border':
-              batch.get('City').errors && batch.get('City').touched
-          }"
+          [ngClass]="{ 'error-border': getErrorState(batch, 'City') }"
         />
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
           <mat-option
@@ -102,14 +99,9 @@
         </mat-autocomplete>
         <div class="multi-box">
           <div class="language-container">
-            <span style="font-size: 12px; font-weight: 500"
-              >Course Language</span
-            >
+            <span class="labelText">Course Language</span>
             <mat-select
-              [ngClass]="{
-                'error-border':
-                  batch.get('Language').errors && batch.get('Language').touched
-              }"
+              [ngClass]="{ 'error-border': getErrorState(batch, 'Language') }"
               placeholder="Select Languages"
               formControlName="Language"
               multiple
@@ -141,16 +133,11 @@
             </mat-select>
           </div>
           <div class="cost-container">
-            <span style="font-size: 12px; font-weight: 500"
-              >Course Cost (Ex GST)</span
-            >
+            <span class="labelText">Course Cost (Ex GST)</span>
             <input
               class="inputText costBox"
               type="number"
-              [ngClass]="{
-                'error-border':
-                  batch.get('Cost').errors && batch.get('Cost').touched
-              }"
+              [ngClass]="{ 'error-border': getErrorState(batch, 'Cost') }"
               formControlName="Cost"
               placeholder="Rs."
             />
@@ -158,11 +145,7 @@
         </div>
         <div class="weekend">
           <span
-            [ngClass]="{
-              'error-text':
-                batch.get('WeekendCourse').errors &&
-                batch.get('WeekendCourse').touched
-            }"
+            [ngClass]="{ 'error-text': getErrorState(batch, 'WeekendCourse') }"
             style="font-size: 12px"
             >Is this a weekend course?</span
           >
@@ -178,8 +161,6 @@
   </mat-accordion>
   <span class="add-section">
     <img (click)="addBatch()" height="20px" src="assets/add_arrow.png" />
-    <span (click)="addBatch()" style="margin-left: 3px" class="add-text"
-      >Add another course date</span
-    >
+    <span (click)="addBatch()" class="add-text">Add another course date</span>
   </span>
 </div>

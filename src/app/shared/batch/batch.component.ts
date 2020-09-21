@@ -74,6 +74,15 @@ export class BatchComponent implements OnInit {
   }
 
   /**
+   * A helper method to return the error state
+   * @param group The form group object
+   * @param controlName The form control name
+   */
+  getErrorState(group: FormGroup, controlName: string) {
+    return group.get(controlName).errors && group.get(controlName).touched;
+  }
+
+  /**
    * Transform date into required format
    * @param group Batch group
    * @param control The data control object

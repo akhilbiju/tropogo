@@ -18,6 +18,22 @@
   font-weight: 500;
   font-size: 11px;
   color: #04c466;
+  margin-left: 3px;
+}
+
+.date-input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.batch-label {
+  margin-left: 5px;
+  margin-right: 32px
+}
+
+.labelText {
+  font-size: 12px;
+  font-weight: 500
 }
 
 .batch-conatiner {
