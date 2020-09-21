@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/54935d48-0a47-498a-8dab-5a156983cc2e/deploy-status)](https://app.netlify.com/sites/tropogo/deploys)
 
+Live app -> https://tropogo.netlify.app
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
