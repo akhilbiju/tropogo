@@ -1,24 +1,53 @@
+.main-container {
+  display: flex;
+  height: calc(100% - 53px);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.progress-bar {
+  display: flex;
+  border-top: 5px solid #04c466;
+}
+
 .form-container {
   display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+}
+
+.image-container {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
 .content-holder {
   background: white;
   max-width: 450px;
   width: 100%;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .controls {
   position: fixed;
   background: white;
   display: flex;
-  justify-content: center;
-  bottom: 0px;
-  width: 100vw;
-  align-items: center;
+  justify-content: flex-end;
+  bottom: 0;
+  left: 0;
+  width: 50%;
   box-shadow: 0px -2px 12px -5px rgba(107, 105, 107, 1);
+}
+
+.content-wrapper {
+  justify-content: flex-end;
+  display: flex;
+  flex: 1;
+  background: white;
 }
 
 .control-button {
@@ -41,19 +70,61 @@
   border: 1px solid #04c466;
 }
 
+.back-mobile {
+  color: #04c466;
+  display: none;
+  font-size: 12px;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 360px) {
   .controls {
-    align-items: stretch;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
     flex-direction: column;
+    height: 50px;
+  }
+  .control-button {
+    margin: 0px;
+    padding: 3px;
   }
   .skip {
     display: none;
   }
-  .content-holder {
-    margin-bottom: 95px;
+  .back {
+    display: none;
   }
-  .back, .next, .save {
-    margin-left: 20px;
-    margin-right: 20px;
+  .back-mobile {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .form-container {
+    flex-basis: unset;
+    width: 100%;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  .controls {
+    width: 100%;
+  }
+
+  .content-wrapper {
+    justify-content: center;
+  }
+
+  .main-container {
+    height: calc(100% - 103px);
+  }
+
+  .content-holder {
+    padding-bottom: 0px;
   }
 }

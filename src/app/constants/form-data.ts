@@ -129,9 +129,15 @@ const STEP_ITEMS = [
   {
     label: 'Institute',
     header: 'Add some details of your training institute',
+    background: 'assets/bg_1.png',
     data: DATA_STEP_1,
   },
-  { label: 'Course', header: 'Add course details', data: DATA_STEP_2 },
+  {
+    label: 'Course',
+    background: 'assets/bg_2.png',
+    header: 'Add course details',
+    data: DATA_STEP_2,
+  },
 ];
 
 export { STEP_ITEMS };

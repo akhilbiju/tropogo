@@ -24,6 +24,10 @@ export class AddDataComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
+  get backgroundImage() {
+    return `url('${STEP_ITEMS[this.currentStep].background}')`;
+  }
+
   get stepLength() {
     return STEP_ITEMS.length;
   }
@@ -34,6 +38,16 @@ export class AddDataComponent implements OnInit {
 
   get activeStepHeader() {
     return STEP_ITEMS[this.currentStep].header;
+  }
+
+  get progressStatus() {
+    if (
+      this.currentStep === STEP_ITEMS.length - 1 &&
+      this.dynamicForm.form.valid
+    ) {
+      return '100%';
+    }
+    return `${((this.currentStep + 1) / (STEP_ITEMS.length + 1)) * 100}%`;
   }
 
   ngOnInit(): void {

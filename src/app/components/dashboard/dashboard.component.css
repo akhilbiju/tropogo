@@ -1,25 +1,26 @@
 .add-button {
-    color: white;
-    background: #04c466;
-    border: 1px solid #04c466;
-    cursor: pointer;
-    min-width: 70px;
-    font-weight: 800;
-    margin: 10px;
-    font-size: 13px;
-    padding: 5px;
-    outline: none;
+  color: white;
+  background: #04c466;
+  border: 1px solid #04c466;
+  cursor: pointer;
+  min-width: 70px;
+  font-weight: 800;
+  margin: 10px;
+  font-size: 13px;
+  padding: 5px;
+  outline: none;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 5px solid #04c466;
 }
 
 .info-text {
-    font-size: 10px;
-    text-align: center;
-    font-style: italic;
+  font-size: 10px;
+  text-align: center;
+  font-style: italic;
 }

@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body {
+html,
+body {
   height: 100%;
   background: #f7f7f7;
+  overflow: hidden;
 }
 
 body {
@@ -15,7 +17,9 @@ body {
   border-width: 1px !important;
 }
 
-.mat-radio-inner-circle, .mat-radio-container, .mat-radio-outer-circle {
+.mat-radio-inner-circle,
+.mat-radio-container,
+.mat-radio-outer-circle {
   width: 12px !important;
   height: 12px !important;
 }
@@ -34,7 +38,8 @@ body {
   background: #f7f7f7 !important;
 }
 
-.mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+.mat-expansion-panel-header-description,
+.mat-expansion-panel-header-title {
   color: black !important;
   font-weight: 500;
   font-size: 13px !important;
@@ -66,7 +71,8 @@ body {
   font-size: 12px;
 }
 
-.mat-menu-item[disabled], .disable-view {
+.mat-menu-item[disabled],
+.disable-view {
   opacity: 0.5;
   pointer-events: none;
   cursor: unset;
@@ -97,7 +103,8 @@ body {
   background: white !important;
 }
 
-.mat-select-value, .mat-select-placeholder {
+.mat-select-value,
+.mat-select-placeholder {
   color: black !important;
   font-size: 13px !important;
   line-height: 27px !important;

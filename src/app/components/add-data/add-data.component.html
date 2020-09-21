@@ -1,33 +1,45 @@
-<div class="form-container">
-  <div class="content-holder">
-    <app-dynamic-form
-      [fields]="fields"
-      [title]="activeStepHeader"
-      (skip)="skipPage()"
-    ></app-dynamic-form>
+<div class="progress-bar" [style.width]="progressStatus"></div>
+<div class="main-container">
+  <div class="form-container">
+    <div class="content-wrapper">
+      <div class="content-holder">
+        <app-dynamic-form
+          [fields]="fields"
+          [title]="activeStepHeader"
+          (skip)="skipPage()"
+        ></app-dynamic-form>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="control-button skip" (click)="skipPage()">SKIP</button>
+      <button
+        class="control-button back"
+        *ngIf="currentStep !== 0"
+        (click)="goToPrevStep()"
+      >
+        BACK
+      </button>
+      <span
+        class="back-mobile"
+        *ngIf="currentStep !== 0"
+        (click)="goToPrevStep()"
+        >Go Back</span
+      >
+      <button
+        class="control-button next"
+        *ngIf="currentStep < stepLength - 1"
+        (click)="goToNextStep()"
+      >
+        NEXT
+      </button>
+      <button
+        class="control-button save"
+        *ngIf="currentStep === stepLength - 1"
+        (click)="submit()"
+      >
+        SAVE & PUBLISH
+      </button>
+    </div>
   </div>
-</div>
-<div class="controls">
-  <button class="control-button skip" (click)="skipPage()">SKIP</button>
-  <button
-    class="control-button back"
-    *ngIf="currentStep !== 0"
-    (click)="goToPrevStep()"
-  >
-    BACK
-  </button>
-  <button
-    class="control-button next"
-    *ngIf="currentStep < stepLength - 1"
-    (click)="goToNextStep()"
-  >
-    NEXT
-  </button>
-  <button
-    class="control-button save"
-    *ngIf="currentStep === stepLength - 1"
-    (click)="submit()"
-  >
-    SAVE & PUBLISH
-  </button>
+  <div [style.background]="backgroundImage" class="image-container"></div>
 </div>
