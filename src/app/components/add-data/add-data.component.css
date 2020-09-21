@@ -21,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: contain;
-  background-repeat: repeat-y;
+  background-size: contain !important;
+  background-repeat: repeat-y !important;
 }
 
 .content-holder {
