@@ -126,3 +126,7 @@ body {
 .mat-select-placeholder {
   color: #636c72 !important;
 }
+
+.mat-select-panel {
+  outline: none !important;
+}
