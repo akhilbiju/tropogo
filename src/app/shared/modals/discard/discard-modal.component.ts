@@ -11,6 +11,9 @@ export class DiscardModalComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Handle continue button click
+   */
   continue() {
     this.dialogRef.close(true);
   }

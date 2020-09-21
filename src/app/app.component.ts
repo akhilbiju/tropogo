@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   constructor(private router: Router) {}
 
+  /**
+   * Navigate to home page
+   */
   goHome() {
     this.router.navigateByUrl('/');
   }

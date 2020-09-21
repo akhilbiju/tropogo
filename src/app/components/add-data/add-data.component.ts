@@ -1,7 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 import { STEP_ITEMS } from 'src/app/constants/form-data';
 import { DiscardModalComponent } from 'src/app/shared/modals/discard/discard-modal.component';
 import { PreviewComponent } from 'src/app/shared/modals/preview/preview.component';
@@ -55,6 +56,9 @@ export class AddDataComponent implements OnInit {
     this.createForm();
   }
 
+  /**
+   * Create form data for dynamic form component
+   */
   createForm() {
     if (this.masterForm.get(this.activeStepLabel)) {
       this.masterForm.get(this.activeStepLabel).markAsUntouched();
@@ -64,6 +68,9 @@ export class AddDataComponent implements OnInit {
     }
   }
 
+  /**
+   * Replace form values if present
+   */
   replaceSavedValue() {
     const savedVal = this.masterForm.get(this.activeStepLabel).value;
     const templateData = [...STEP_ITEMS[this.currentStep].data];
@@ -80,6 +87,9 @@ export class AddDataComponent implements OnInit {
     this.fields = templateData;
   }
 
+  /**
+   * Update master form on step change
+   */
   updateControl() {
     if (this.masterForm.get(this.activeStepLabel)) {
       this.masterForm.removeControl(this.activeStepLabel);
@@ -88,6 +98,9 @@ export class AddDataComponent implements OnInit {
     this.masterForm.get(this.activeStepLabel).markAsDirty();
   }
 
+  /**
+   * Handle next button click
+   */
   goToNextStep() {
     if (this.dynamicForm.form.invalid) {
       this.dynamicForm.form.markAllAsTouched();
@@ -100,6 +113,9 @@ export class AddDataComponent implements OnInit {
     }
   }
 
+  /**
+   * Handle back button click
+   */
   goToPrevStep() {
     this.updateControl();
     this.currentStep -= 1;
@@ -107,6 +123,9 @@ export class AddDataComponent implements OnInit {
     this.dynamicForm.showError = false;
   }
 
+  /**
+   * Handle form submission
+   */
   submit() {
     if (this.dynamicForm.form.invalid) {
       this.dynamicForm.showError = true;
@@ -119,6 +138,9 @@ export class AddDataComponent implements OnInit {
     }
   }
 
+  /**
+   * Remove image data for the preview
+   */
   removeImageData() {
     ['Brochure', 'Certificate', 'Gallery'].forEach((controlName: any) => {
       const list = this.masterForm
@@ -134,6 +156,10 @@ export class AddDataComponent implements OnInit {
       .setValue('Large data - Removed from preview');
   }
 
+  /**
+   * Method to handle navigation
+   * Also, check if form is dirty before navigation
+   */
   skipPage() {
     if (this.masterForm.dirty || this.dynamicForm.form.dirty) {
       this.dialog

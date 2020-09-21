@@ -43,10 +43,26 @@ export class BatchComponent implements OnInit {
     return this.f[this.field.name] as FormArray;
   }
 
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    if (!this.t.controls.length) {
+      this.t.push(this.createInitalGroup());
+    }
+  }
+
+  /**
+   * Just an helper to retrieve language control
+   * @param group Group object
+   */
   getLangControl(group: FormGroup) {
     return group.get('Language');
   }
 
+  /**
+   * Filter option values based on user input
+   * @param batch the batch group object
+   */
   getFilterValue(batch: FormGroup) {
     const controlValue = batch.get('City').value;
     if (controlValue) {
@@ -57,14 +73,11 @@ export class BatchComponent implements OnInit {
     return this.cities;
   }
 
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {
-    if (!this.t.controls.length) {
-      this.t.push(this.createInitalGroup());
-    }
-  }
-
+  /**
+   * Transform date into required format
+   * @param group Batch group
+   * @param control The data control object
+   */
   extractDate(group: FormGroup, control) {
     const value = group.get(control).value;
     if (!value) {
@@ -75,6 +88,9 @@ export class BatchComponent implements OnInit {
     return `${day} ${month}`;
   }
 
+  /**
+   * Create an batch group template
+   */
   createInitalGroup() {
     return this.fb.group({
       WeekendCourse: ['', Validators.required],
@@ -86,19 +102,34 @@ export class BatchComponent implements OnInit {
     });
   }
 
+  /**
+   * Reset a batch data
+   * @param group Batch group to be reset
+   */
   resetBatch(group: FormGroup) {
     group.reset();
   }
 
+  /**
+   * Delete an existing batch form
+   * @param index Index of batch from to be deleted
+   */
   deleteBatch(index) {
     this.t.removeAt(index);
   }
 
+  /**
+   * Add new batch form
+   */
   addBatch() {
     this.accordion.closeAll();
     this.t.push(this.createInitalGroup());
   }
 
+  /**
+   * Stop event propogation - To prevent events fired from the parent elements
+   * @param $event Click event
+   */
   onEvent($event) {
     $event.stopPropagation();
   }

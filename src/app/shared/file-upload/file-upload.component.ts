@@ -39,6 +39,9 @@ export class FileUploadComponent implements OnInit {
   }
   constructor(private cd: ChangeDetectorRef, private fb: FormBuilder) {}
 
+  /**
+   * Set validators if any
+   */
   setValidators() {
     if (this.field.validations.length) {
       this.t.setValidators(this.field.validations[0].validator);
@@ -51,12 +54,20 @@ export class FileUploadComponent implements OnInit {
     this.t.markAsUntouched();
   }
 
+  /**
+   * Handle delete image
+   * @param index Index of file to be deleted
+   */
   deleteImage(index) {
     this.t.markAllAsTouched();
     this.t.markAsDirty();
     this.t.removeAt(index);
   }
 
+  /**
+   * Handle file input sellection change
+   * @param event File input event
+   */
   onFileChange(event) {
     if (event.target.files && event.target.files.length) {
       for (let i = 0; i < event.target.files.length; i++) {

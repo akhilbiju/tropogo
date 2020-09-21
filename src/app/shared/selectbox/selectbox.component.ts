@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './selectbox.component.html',
   styleUrls: ['./selectbox.component.css'],
 })
-export class SelectboxComponent implements OnInit {
+export class SelectboxComponent {
   field: any;
   group: FormGroup;
 
@@ -25,6 +25,4 @@ export class SelectboxComponent implements OnInit {
   }
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

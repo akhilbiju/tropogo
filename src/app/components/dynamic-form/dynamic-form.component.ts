@@ -31,6 +31,9 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     this.form = this.createControl();
   }
 
+  /**
+   * Create form controls and add to the form group
+   */
   createControl() {
     const group = this.fb.group({});
     this.fields.forEach((field) => {
@@ -50,6 +53,10 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     return group;
   }
 
+  /**
+   * Binds the form control validators
+   * @param validations - List of validations
+   */
   bindValidations(validations: any) {
     if (validations.length) {
       const validationList = [];
@@ -61,10 +68,16 @@ export class DynamicFormComponent implements OnInit, OnChanges {
     return null;
   }
 
+  /**
+   * Emit skip page event to parent
+   */
   skipPage() {
     this.skip.emit();
   }
 
+  /**
+   * Handle error toast close
+   */
   closeError() {
     this.showError = false;
   }

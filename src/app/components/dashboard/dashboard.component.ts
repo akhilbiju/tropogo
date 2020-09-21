@@ -11,6 +11,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Navigate to add data page
+   */
   addData() {
     this.router.navigateByUrl('/add');
   }

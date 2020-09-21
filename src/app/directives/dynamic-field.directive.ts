@@ -6,6 +6,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
 import { BatchComponent } from '../shared/batch/batch.component';
 import { FileUploadComponent } from '../shared/file-upload/file-upload.component';
 import { InputComponent } from '../shared/input/input.component';
@@ -34,11 +35,14 @@ export class DynamicFieldDirective implements OnInit {
   ) {}
 
   ngOnInit() {
+    //Generate factory component of the required type
     const factory = this.resolver.resolveComponentFactory(
       componentMapper[this.field.type]
     );
+    //Create form component from the factory object
     this.componentRef = this.contaier.createComponent(factory);
 
+    // Assign values for the component variables
     this.componentRef.instance.field = this.field;
     this.componentRef.instance.group = this.group;
   }

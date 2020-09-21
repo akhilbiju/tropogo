@@ -15,6 +15,9 @@ export class LogoComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Get the active URL of the logo
+   */
   getUrl() {
     const placeHolder = 'assets/ic_logoiid.png';
     let selectedImage = null;
@@ -24,6 +27,10 @@ export class LogoComponent implements OnInit {
     return `url(${selectedImage ? selectedImage : placeHolder})`;
   }
 
+  /**
+   * Handle file selection changes
+   * @param event File input change event
+   */
   onFileChange(event) {
     if (event.target.files && event.target.files.length) {
       for (let i = 0; i < event.target.files.length; i++) {
